@@ -1,0 +1,12 @@
+{
+  "name": "Huff(enviroment)",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "PabloPoche.huff-debugger",
+        "huff-language.huff-language"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}
