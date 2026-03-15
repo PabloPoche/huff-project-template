@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Debug Huff",
+      "type": "shell",
+      "command": "TERM=xterm TERMINFO=/usr/share/terminfo script -q -c \"/usr/local/bin/hevm exec --code $(~/.huff/bin/huffc --evm-version paris ${file} -r) --gas 0xffffffff --debug\" /dev/null",
+      "options": {
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-c"]
+        },
+        "env": {
+          "TERM": "xterm",
+          "TERMINFO": "/usr/share/terminfo"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Compilar Huff",
+      "type": "shell",
+      "command": "~/.huff/bin/huffc --evm-version paris ${file} -b",
+      "options": {
+        "shell": {
+          "executable": "/bin/bash",
+          "args": ["-c"]
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      }
+    }
+  ]
+}
